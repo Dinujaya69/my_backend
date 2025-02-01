@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 //user routes
 app.use('/api/user', userRouter);
 //products routes
-app.use('/api/product', productRouter);
+//app.use('/api/product', productRouter);
 
 
 
