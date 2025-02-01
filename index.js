@@ -1,6 +1,6 @@
 import express from 'express';
 import { PORT } from "./src/config/env.js";
-//import userRouter from './src/routes/userRoute.js';
+import userRouter from './src/routes/userRoute.js';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from "cors";
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 });
 
 //user routes
-//app.use('/api/user', userRouter);
+app.use('/api/user', userRouter);
 //products routes
 app.use('/api/product', productsRouter);
 
