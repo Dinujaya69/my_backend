@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import cors from "cors";
 import errorHandler from './src/middlewares/error.middleware.js';
 import connectDB from './src/config/db.js';
-import productRouter from './src/routes/ProductRoute.js';
+//import productRouter from './src/routes/ProductRoute.js';
 
 
 // Load environment variables
