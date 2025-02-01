@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import cors from "cors";
 import errorHandler from './src/middlewares/error.middleware.js';
 import connectDB from './src/config/db.js';
-//import productRouter from './src/routes/ProductRoute.js';
+import productRouter from './src/routes/ProductRoute.js';
 
 
 // Load environment variables
@@ -27,9 +27,10 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
+//user routes
 app.use('/api/user', userRouter);
-
-//app.use('/api/product', productRouter);
+//products routes
+app.use('/api/product', productRouter);
 
 
 
