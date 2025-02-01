@@ -2,21 +2,22 @@ import express from "express";
 import { createProduct, deleteProduct, getProduct, getProducts, updateProduct,  } from "../controllers/ProductController.js";
 import authMiddleware from "../middlewares/authMiddleware.js";
 import upload from "../utils/multerConfig.js"; 
-const productRouter = express.Router();
+
+const productsRouter = express.Router();
 
 
 //post routes
-productRouter.post('/add', upload.single("image"), authMiddleware,createProduct);
+productsRouter.post('/add', upload.single("image"), authMiddleware,createProduct);
 
 //get routes
-productRouter.get('/',getProducts);
-productRouter.get('/:id',authMiddleware,getProduct);
+productsRouter.get('/',getProducts);
+productsRouter.get('/:id',authMiddleware,getProduct);
 
 //delete routes
-productRouter.delete('/delete/:id',authMiddleware,deleteProduct);
+productsRouter.delete('/delete/:id',authMiddleware,deleteProduct);
 
 //update routes
-productRouter.put('/update/:productId', upload.single("image"), authMiddleware,updateProduct);
+productsRouter.put('/update/:productId', upload.single("image"), authMiddleware,updateProduct);
 
 
 
@@ -25,4 +26,4 @@ productRouter.put('/update/:productId', upload.single("image"), authMiddleware,u
 
 
 
-export default productRouter;
+export default productsRouter;
