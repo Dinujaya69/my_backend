@@ -9,7 +9,7 @@ const productRouter = express.Router();
 productRouter.post('/add', upload.single("image"), authMiddleware,createProduct);
 
 //get routes
-productRouter.get('/',authMiddleware,getProducts);
+productRouter.get('/',getProducts);
 productRouter.get('/:id',authMiddleware,getProduct);
 
 //delete routes
