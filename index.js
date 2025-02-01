@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import cors from "cors";
 import errorHandler from './src/middlewares/error.middleware.js';
 import connectDB from './src/config/db.js';
-import IRoute from './src/routes/IRoute.js';
+import productsRoute from './src/routes/productsRoute.js';
 
 
 
@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 //user routes
 app.use('/api/user', userRouter);
 //products routes
-app.use('/api/product', IRoute);
+app.use('/api/product', productsRoute);
 
 
 
