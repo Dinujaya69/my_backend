@@ -8,7 +8,7 @@ export const createProduct =async (req, res, next) => {
             description,
             price,
             category,
-            image: req.file ? req.file.path : null,
+            image: req.file ? req.file.path.replace(/\\/g, "/") : null,
         });
         await newProduct.save();
         res.status(201).json({ message: "Product created successfully" });
