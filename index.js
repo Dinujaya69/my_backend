@@ -7,7 +7,7 @@ import cors from "cors";
 import errorHandler from './src/middlewares/error.middleware.js';
 import connectDB from './src/config/db.js';
 import productsRoute from './src/routes/productsRoute.js';
-
+import path from 'path';
 
 
 // Load environment variables
@@ -23,7 +23,8 @@ app.use(bodyParser.json());
 // Connect Database
 connectDB();
 app.use(errorHandler);
-
+const __dirname = path.resolve();
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
